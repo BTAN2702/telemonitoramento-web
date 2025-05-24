@@ -1,0 +1,3 @@
+[submodule "telemonitoramento-web"]
+	path = telemonitoramento-web
+	url = https://github.com/BTAN2702/telemonitoramento-web.git
