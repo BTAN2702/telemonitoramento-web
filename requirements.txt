@@ -1,5 +1,8 @@
 streamlit
-psycopg2
+psycopg2-binary
 pandas
 matplotlib
 python-dotenv
+plotly
+cryptography
+reportlab
