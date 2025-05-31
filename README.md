@@ -1,4 +1,55 @@
-# telemonitoramento-web
+# 🩺 Telemonitoramento CEUB
+
+Sistema web para acompanhamento remoto de sinais vitais, desenvolvido para facilitar o monitoramento de pacientes por profissionais de saúde e administradores.
+
+## 🚀 Funcionalidades principais
+- Cadastro e autenticação de usuários (com 2FA e recuperação de senha)
+- Cadastro de profissionais e pacientes
+- Registro e visualização de sinais vitais
+- Alertas automáticos por e-mail para alterações críticas
+- Mensagens internas entre usuários
+- Auditoria de ações do sistema
+- Relatórios e exportação de dados (CSV)
+- Configuração dinâmica dos parâmetros de alerta
+
+## ⚠️ Avisos para a versão beta
+- Exportação em PDF e gráficos interativos ainda estão em desenvolvimento
+- Caso encontre algum erro, por favor, reporte via issues no GitHub
+
+## 📦 Requisitos
+- Python 3.8+
+- PostgreSQL
+- Variáveis de ambiente configuradas (ver `.env.example`)
+- Bibliotecas: ver `requirements.txt`
+
+## 🛠️ Instalação
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/BTAN2702/telemonitoramento-web.git
+   cd telemonitoramento-web
+   ```
+2. Instale as dependências:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Configure o banco de dados PostgreSQL e as variáveis de ambiente (`.env`)
+4. Execute a aplicação:
+   ```bash
+   streamlit run app.py
+   ```
+
+## 🤝 Contribuição
+- Pull requests são bem-vindos!
+- Relate bugs e sugestões na aba [Issues](https://github.com/BTAN2702/telemonitoramento-web/issues)
+
+## 👨‍💻 Equipe & Contato
+- Desenvolvido por alunos e professores do CEUB
+- Dúvidas: suporte@ceub.edu.br
+
+---
+
+> **Esta é uma versão beta!**
+> Sua opinião é fundamental para melhorarmos o sistema. Teste, explore e envie seu feedback!
 
 ## Manual do Usuário/Admin
 
