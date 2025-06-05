@@ -190,6 +190,51 @@ def buscar_parametros_alerta():
         "pressao_min": pressao_min, "pressao_max": pressao_max
     }
 
+# ---------------- Parametros de alerta customizados -----------------
+PARAMETROS_CUSTOM = {}
+
+def set_parametro_alerta(nome, limite_min, limite_max, sugestao):
+    """Define ou atualiza um parametro de alerta para uso em testes.
+
+    Args:
+        nome (str): Nome do parametro.
+        limite_min (str or float): Valor minimo aceitavel.
+        limite_max (str or float): Valor maximo aceitavel.
+        sugestao (str): Mensagem de alerta a ser retornada.
+    """
+    try:
+        PARAMETROS_CUSTOM[nome.lower()] = {
+            "min": float(limite_min),
+            "max": float(limite_max),
+            "sugestao": sugestao,
+        }
+    except Exception:
+        PARAMETROS_CUSTOM[nome.lower()] = {
+            "min": None,
+            "max": None,
+            "sugestao": sugestao,
+        }
+
+
+def checar_alerta_custom(nome, valor):
+    """Verifica se ``valor`` esta fora dos limites definidos para ``nome``.
+
+    Retorna ``(True, sugestao)`` quando o valor ultrapassa os limites
+    previamente cadastrados com :func:`set_parametro_alerta`.
+    """
+    param = PARAMETROS_CUSTOM.get(nome.lower())
+    if not param:
+        return False, ""
+    try:
+        val = float(valor)
+    except Exception:
+        return False, "Valor invalido"
+    if (param["min"] is not None and val < param["min"]) or (
+        param["max"] is not None and val > param["max"]
+    ):
+        return True, param["sugestao"]
+    return False, ""
+
 # Funções de validação
 def validar_pressao(pressao):
     """
